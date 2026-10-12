@@ -1,5 +1,12 @@
 --- a/makepanda/installpanda.py
 +++ b/makepanda/installpanda.py
+@@ -119,5 +119,5 @@
+     something like "lib" or "lib64" or in some cases, something
+     similar to "lib/x86_64-linux-gnu". """
+
+-    if sys.platform in ("darwin", "win32", "cygwin"):
++    if True:
+         return "lib"
 @@ -175,0 +176,3 @@
 +        python_lib = prefix+"/lib/python"+python_version["version"]+"/site-packages"
 +        python_version["purelib"] = python_lib
