@@ -19,6 +19,7 @@ termux_step_pre_configure() {
 }
 
 termux_step_make() {
+	export TERMUX_PREFIX="${TERMUX_PREFIX:-${TERMUX__PREFIX:-$PREFIX}}"
 	local PANDA_ARCH="${TERMUX_ARCH}"
 	if [[ "${TERMUX_ARCH}" == "i686" ]]; then
 		PANDA_ARCH="x86"

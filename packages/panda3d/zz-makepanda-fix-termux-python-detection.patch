@@ -1,0 +1,11 @@
+diff --git a/makepanda/makepanda.py b/makepanda/makepanda.py
+--- a/makepanda/makepanda.py
++++ b/makepanda/makepanda.py
+@@ -1178,3 +1178,7 @@
+         if not PkgSkip("PYTHON"):
+             python_lib = SDK["PYTHONVERSION"]
++            termux_prefix = os.environ.get("TERMUX_PREFIX")
++            if GetTarget() == "android" and termux_prefix:
++                IncDirectory("PYTHON", os.path.join(termux_prefix, "include"))
++                LibDirectory("PYTHON", os.path.join(termux_prefix, "lib"))
+             SmartPkgEnable("PYTHON", "", python_lib, (SDK["PYTHONVERSION"], SDK["PYTHONVERSION"] + "/Python.h"))
